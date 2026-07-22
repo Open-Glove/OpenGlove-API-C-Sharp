@@ -27,6 +27,23 @@ namespace OpenGlove
         {
             communication.OpenPort(portName, baudRate);
         }
+
+        /// <summary>
+        /// Selecciona parser serial: BNO055 (dual quat) o LSM9DS1 (EOF legacy).
+        /// </summary>
+        public void SetImuModel(string imuModel)
+        {
+            communication.SetImuModel(imuModel);
+        }
+
+        /// <summary>
+        /// Acceso a eventos de trama IMU / líneas tipadas.
+        /// </summary>
+        public Communication GetCommunication()
+        {
+            return communication;
+        }
+
         /// <summary>
         /// Close the current active serial communication
         /// </summary>
